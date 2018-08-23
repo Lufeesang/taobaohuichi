@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../public/bs/css/bootstrap.css">
+    <script src="../public/js/jquery-1.11.3.min.js"></script>
+    <script src="../public/bs/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: #666;
+        }
+
+        a:hover{
+            color: #666;
+        }
+
+        a:focus{
+            text-decoration: none;
+        }
+
+        ul li{
+            list-style: none;
+        }
+
+        .mycontainer{
+            width: 1190px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+
+        .orange{
+            color: #f40;
+        }
+
+        .zero{
+            font-weight:bold;
+        }
+
+        .main{
+            width: 1190px;
+            height: 35px;
+            margin:0 auto;
+            line-height: 35px;
+            font-size: 13px;
+        }
+
+        .head{
+            background-color: #f5f5f5;
+        }
+
+        .main-left{
+            float: left;
+        }
+
+        .main-left a{
+            margin-right: 5px;
+        }
+
+        .main-right{
+            float: right;
+        }
+
+        .main-right a{
+            margin-left: 15px;
+        }
+
+        .main-right .divide{
+            color: #ccc;
+            margin-left: 3px;
+        }
+
+        .cart{
+            color: #f40;
+            transform: scale(0.85);
+        }
+
+        .main-right .down{
+            transform: scale(0.5);
+        }
+
+        .main-right .star{
+            color: #666;
+            transform: scale(0.85);
+        }
+
+        .main-right .myTaobao_down{
+            position: absolute;
+            width: 80px;
+            height: 50px;
+            margin-left: 3px;
+            display: none;
+        }
+
+        .main-right .myTaobao_down a{
+            margin-left: 0;
+            display: block;
+            background-color: #fff;
+        }
+
+        .main-right .myTaobao{
+            display: inline-block;
+        }
+
+        .main-right .shop-cart{
+            display: inline-block;
+        }
+
+        .main-right .shop-cart-down{
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            display: none;
+        }
+
+        .main-right .cart-button{
+            border-radius: 5px;
+            height: 30px;
+            margin-top: 3px;
+            background-color: #f40;
+            color: #fff;
+            line-height: 20px;
+            padding: 3px;
+            border: 1px;
+        }
+
+        .main-right .collection{
+            display: inline-block;
+        }
+
+        .main-right .collection-down{
+            position: absolute;
+            width: 80px;
+            background-color: #fff;
+            margin-left: 8px;
+            display: none;
+        }
+
+        .main-right .collection-down a{
+            margin-left: 2px;
+        }
+
+        .main-right .saler-center{
+            display: inline-block;
+        }
+
+        .main-right .saler-center-down{
+            position: absolute;
+            width: 80px;
+            background-color: #fff;
+            display: none;
+        }
+
+        .main-right .saler-center-down a{
+            margin-left: 2px;
+            display: block;
+        }
+
+        .main-right .human-service{
+            display: inline-block;
+        }
+
+        .main-right .human-service-down{
+            position: absolute;
+            width: 80px;
+            background-color: #fff;
+            display: none;
+        }
+
+        .main-right .human-service-down a{
+            margin-left: 7px;
+        }
+
+        .main-right .web-nav{
+            display: inline-block;
+        }
+
+        .main-right .web-nav-down{
+            width: 1200px;
+            height: 312px;
+            background-color: #fff;
+            position: absolute;
+            margin-left: -1110px;
+            display: none;
+        }
+        .main-right .web-nav-down .web-nav1{
+            width: 297px;
+            height: 312px;
+            border-right: 1px solid #eee;
+            /*background-color: #f40;*/
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .main-right .web-nav1 ul li{
+            float: left;
+            display: inline-block;
+            margin-top: 5px;
+            height: 25px;
+            line-height:25px;
+        }
+        .main-right .web-nav-down a{
+            margin-left: 2px;
+            padding: 0 8px;
+            margin-right: 25px;
+
+        }
+        .main-right .nav-hot{
+            width: 9px;
+            height: 14px;
+            position: absolute;
+            display: inline-block;
+            background: url("../public/img/firstPage/hot.gif") no-repeat;
+        }
+
+        .main-right .nav-new{
+            width: 9px;
+            height: 14px;
+            position: absolute;
+            display: inline-block;
+            background: url("../public/img/firstPage/new.gif") no-repeat;
+        }
+
+        .main-right .web-nav-title{
+            margin: 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .search{
+            width: 1190px;
+            height: 99px;
+            margin: 0 auto;
+        }
+
+        .search .search-left{
+            float: left;
+            margin-top:27px;
+        }
+
+        .search .search-right{
+            width: 595px;
+            height: 35px;
+            float: right;
+            margin-top: 34px;
+        }
+
+        .search .search-input{
+            width: 452px;
+            height: 35px;
+            border: 2px solid #ff6440;
+            padding-left: 12px;
+        }
+
+        .search .search-submit{
+            width: 70px;
+            height: 35px;
+            border: 1px solid #ff6440;
+            background-color: #ff6440;
+            color: #fff;
+            font-weight:600;
+            font-size: 14px;
+            margin-left: -5px;
+        }
+
+        .search .search-taobao{
+            background-color: #fff0E6;
+            color: #ff6440;
+            font-weight:600;
+            width: 70px;
+            height: 35px;
+            border:1px solid #ffb188;
+            font-size: 14px;
+        }
+
+        .food-classify-top{
+            height: 40px;
+            width: 100%;
+            border-bottom:2px solid #ff6440;
+        }
+
+        .food-classify-container{
+            width: 1190px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .food-classify-tittle{
+            width: 238px;
+            height: 38px;
+            background-color: #ff6440;
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        .food-classify-container a{
+            color: #fff;
+            font-size: 16px;
+            line-height: 38px;
+            font-weight: 600;
+        }
+
+        .food-classify-container .shouye{
+            color: #ff6440;
+            margin-left: 50px;
+        }
+
+        .food-classify-container .shangjiaruzhu{
+            color: #000;
+            float: right;
+        }
+
+        .mycarousel-left{
+            width: 238px;
+            height: 398px;
+            display: none;
+            background-color: #ff6440;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+
+        .mycarousel-left-item{
+            width: 238px;
+            height: 56px;
+            padding:9px 0 9px 16px;
+            /*vertical-align: middle;*/
+
+        }
+
+        .mycarousel-left-item img{
+            width: 24px;
+            height: 24px;
+            margin-bottom: 25px;
+        }
+
+        .mycarousel-left-item .mycarousel-left-title a{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #fff;
+        }
+        .mycarousel-left-item .mycarousel-item-right{
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .mycarousel-item-right .mycarousel-left-captions a{
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        .mycarousel-item-right .mycarousel-left-captions a:hover{
+            text-decoration: underline;
+        }
+
+        .mycarousel-left-item .arrow-right{
+            width: 8px;
+            max-height: 13px;
+            float: right;
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+
+        .mycarousel-left-extend{
+            width: 712px;
+            height: 398px;
+            background-color: #fff;
+            margin-top: -67px;
+            margin-left: 222px;
+            border: 2px solid #ff0a14;
+            border-left: 0;
+            display: none;
+            position: absolute;
+        }
+
+        .mycarousel-left-extend .div-arrow-bold{
+            width: 7px;
+            height: 398px;
+            float: left;
+        }
+
+        .mycarousel-left-item .arrow-bold{
+            width: 7px;
+            height: 12px;
+            margin-top: 20px;
+        }
+
+        .mycarousel-left-extend .mycarousel-left-extend-bigul{
+            padding-top: 15px;
+            width: 695px;
+            float: left;
+        }
+
+        .mycarousel-left-extend .mycarousel-extend-item{
+            width: 228px;
+            height: 96px;
+            display: inline-block;
+            padding-left: 12px;
+            border-left: 1px solid #eee;
+            margin-bottom: 25px;
+        }
+
+        .mycarousel-left-extend .mycarousel-extend-left{
+            width: 66px;
+            height: 96px;
+            display: inline-block;
+            float: left;
+        }
+
+        .mycarousel-left-extend .mycarousel-extend-left img{
+            width: 66px;
+            height: 68px;
+            margin-top: 7px;
+        }
+
+        .mycarousel-extend-left .mycarousel-extend-left-title{
+            font-weight: 700;
+            text-align: center;
+            line-height: 14px;
+            color: #666;
+            width: 66px;
+            display: inline-block;
+        }
+
+        .mycarousel-left-extend .mycarousel-extend-right{
+            width: 136px;
+            height: 96px;
+            display: inline-block;
+            float: right;
+        }
+
+        .mycarousel-extend-right ul{
+            padding:0;
+            display: inline-block;
+        }
+
+        .mycarousel-extend-right ul li{
+            width: 68px;
+            display: inline-block;
+            float: left;
+            line-height: 18px;
+            margin-bottom: 5px;
+        }
+
+        .mycarousel-extend-right ul li a{
+            color: #666;
+            font-size: 13px;
+            line-height: 18px;
+            font-weight:lighter;
+        }
+
+        .mycarousel-extend-right ul li a:hover{
+            text-decoration: underline;
+        }
+
+        .mycarousel-left-item:hover{
+            cursor: pointer;
+        }
+
+        .selector{
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .selector-top{
+            height: 26px;
+        }
+
+        .selectorTop-left{
+            padding-top: 5px;
+            float: left;
+        }
+        
+        .selectorTop-left>a{
+            width: 44px;
+            height: 22px;
+            line-height: 21px;
+            border: 1px solid #ebebeb;
+            background-color: #fff;
+            padding: 1px 7px;
+            color: #666;
+        }
+
+        .selectorTop-left>span{
+            margin: 0 5px;
+            font-weight:600;
+            color: #ccc;
+        }
+
+        .selectorTop-left .selector-search{
+            display: inline-block;
+            border: 1px solid #9d9d9d;
+        }
+
+        .selector-search input{
+            border: 0;
+            width: 107px;
+            height: 19px;
+            padding-left: 2px;
+        }
+
+        .selector-search a span{
+            color: #ccc;
+            font-size: 14px;
+
+        }
+
+        .selectorTop-right {
+            float: right;
+            color: #9a9a9a;
+            text-align: right;
+            padding-top: 5px;
+        }
+
+        .selectorTop-right span{
+            margin: 0 3px;
+        }
+
+        ::-moz-placeholder {
+            color: #ccc;
+        }
+
+        .selector-middle{
+            border: 1px solid #d5d5d5;
+            height: 43px;
+            margin-top: 10px;
+        }
+
+        .selector-middle span{
+            display: inline-block;
+            width: 108px;
+            height: 41px;
+            text-align: center;
+            padding-top: 10px;
+            color: #999;
+        }
+
+        .selector-middle a{
+            height: 18px;
+            margin: 9px 24px 0 16px ;
+            font-size: 12px;
+        }
+
+        .selector-middle a:hover{
+            text-decoration: none;
+        }
+
+        .selector-bottom{
+            height: 41px;
+            border: 1px solid #ebebeb;
+            margin-top: 10px;
+            background-color: #ebebeb;
+        }
+
+        .selector-bottom ul li{
+            float: left;
+        }
+
+        .selector-bottom ul li a{
+            height: 39px;
+            padding-left: 20px;
+            padding-right: 15px;
+            border-right: 1px solid #ebebeb;
+            line-height: 39px;
+            display: inline-block;
+        }
+
+        .selector-bottom ul li a:hover{
+            text-decoration: none;
+            color: #fe4300;
+        }
+
+        .selector-active{
+            background-color: #fff;
+            color: #fe4300;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="main">
+        <div class="main-left">
+            <a href="#" class="orange">亲，请登录</a>
+            <a href="#">免费注册</a>
+            <a href="#">手机逛淘宝</a>
+        </div>
+        <div class="main-right">
+            <a href="#">淘宝网首页</a>
+            <div class="myTaobao">
+                <a href="#">我的淘宝 <span class="glyphicon glyphicon-chevron-down down"></span>
+                </a>
+                <div class="myTaobao_down">
+                    <a href="#">已买到的宝贝</a>
+                    <a href="#">我的足迹</a>
+                </div>
+            </div>
+            <div class="shop-cart">
+                <a href="#"><span class="glyphicon glyphicon-shopping-cart   cart"></span> 购物车 <span class="orange zero">0</span> <span class="glyphicon glyphicon-chevron-down down"></span></a>
+                <div class="shop-cart-down">
+                    <span>您购物车还没有任何宝贝。</span>
+                    <button type="button" class="cart-button">查看我的购物车</button>
+                </div>
+            </div>
+            <div class="collection">
+                <a href="#"><span class="glyphicon glyphicon-star star"></span> 收藏夹 <span class="glyphicon glyphicon-chevron-down down"></span></a>
+                <div class="collection-down">
+                    <a href="">收藏的宝贝</a>
+                    <a href="">收藏的店铺</a>
+                </div>
+            </div>
+
+            <a href="#">商品分类</a>
+            <span class="divide"> | </span>
+
+            <div class="saler-center">
+                <a href="#">卖家中心 <span class="glyphicon glyphicon-chevron-down down"></span></a>
+                <div class="saler-center-down">
+                    <a href="">免费开店</a>
+                    <a href="">已卖出的宝贝</a>
+                    <a href="">出售中的宝贝</a>
+                    <a href="">卖家服务市场</a>
+                    <a href="">卖家培训中心</a>
+                    <a href="">体检中心</a>
+                    <a href="">问商友</a>
+                </div>
+            </div>
+            <div class="human-service">
+                <a href="#">联系客服 <span class="glyphicon glyphicon-chevron-down down"></span></a>
+                <div class="human-service-down">
+                    <a href="">消费者客服</a>
+                    <a href="">卖家客服</a>
+                </div>
+            </div>
+            <div class="web-nav">
+                <a href="#">网站导航 <span class="glyphicon glyphicon-chevron-down down"></span></a>
+                <div class="web-nav-down">
+                    <div class="web-nav1">
+                        <h4 class="web-nav-title" style="color:#fc4200">主题市场</h4>
+                        <ul>
+                            <li><a href="">女装<i class="nav-hot"></i> </a></li>
+                            <li><a href="">男装</a></li>
+                            <li><a href="">内衣</a></li>
+                            <li><a href="">鞋靴</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电<i class="nav-new"></i></a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">游戏</a></li>
+                            <li><a href="">动漫<i class="nav-hot"></i></a></li>
+                            <li><a href="">影视</a></li>
+                            <li><a href="">美食</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">宠物</a></li>
+                            <li><a href="">鲜花</a></li>
+                            <li><a href="">房产</a></li>
+                            <li><a href="">农资</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电</a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                    </div>
+                    <div class="web-nav1">
+                        <h4 class="web-nav-title" style="color: #9fb838;">特色市场</h4>
+                        <ul>
+                            <li><a href="">女装<i class="nav-hot"></i> </a></li>
+                            <li><a href="">男装</a></li>
+                            <li><a href="">内衣</a></li>
+                            <li><a href="">鞋靴</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电<i class="nav-new"></i></a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">游戏</a></li>
+                            <li><a href="">动漫<i class="nav-hot"></i></a></li>
+                            <li><a href="">影视</a></li>
+                            <li><a href="">美食</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">宠物</a></li>
+                            <li><a href="">鲜花</a></li>
+                            <li><a href="">房产</a></li>
+                            <li><a href="">农资</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电</a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                    </div>
+                    <div class="web-nav1">
+                        <h4 class="web-nav-title" style="color:#d75696">阿里APP</h4>
+                        <ul>
+                            <li><a href="">女装<i class="nav-hot"></i> </a></li>
+                            <li><a href="">男装</a></li>
+                            <li><a href="">内衣</a></li>
+                            <li><a href="">鞋靴</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电<i class="nav-new"></i></a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">游戏</a></li>
+                            <li><a href="">动漫<i class="nav-hot"></i></a></li>
+                            <li><a href="">影视</a></li>
+                            <li><a href="">美食</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">宠物</a></li>
+                            <li><a href="">鲜花</a></li>
+                            <li><a href="">房产</a></li>
+                            <li><a href="">农资</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电</a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                    </div>
+                    <div class="web-nav1">
+                        <h4 class="web-nav-title" style="color:#2e9fdb">精彩推荐集</h4>
+                        <ul>
+                            <li><a href="">女装<i class="nav-hot"></i> </a></li>
+                            <li><a href="">男装</a></li>
+                            <li><a href="">内衣</a></li>
+                            <li><a href="">鞋靴</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电<i class="nav-new"></i></a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">游戏</a></li>
+                            <li><a href="">动漫<i class="nav-hot"></i></a></li>
+                            <li><a href="">影视</a></li>
+                            <li><a href="">美食</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">宠物</a></li>
+                            <li><a href="">鲜花</a></li>
+                            <li><a href="">房产</a></li>
+                            <li><a href="">农资</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手表</a></li>
+                            <li><a href="">户外</a></li>
+                            <li><a href="">运动</a></li>
+                            <li><a href="">乐器</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">美妆</a></li>
+                            <li><a href="">珠宝</a></li>
+                            <li><a href="">眼镜</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">箱包</a></li>
+                            <li><a href="">婴童</a></li>
+                            <li><a href="">家电</a></li>
+                            <li><a href="">数码</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <div class="search">
+        <div class="search-left">
+            <img src="../public/img/firstPage/brand.png" alt="淘宝汇吃">
+        </div>
+        <div class="search-right">
+            <form action="">
+                <input type="text" class="search-input" placeholder="零食">
+                <input type="submit" class="search-submit" value="搜食品">
+                <input type="submit" class="search-taobao" value="搜淘宝">
+            </form>
+        </div>
+    </div>
+    <div class="food-classify-top">
+        <div class="food-classify-container">
+            <div class="food-classify-tittle">
+                <a href="">所有食品分类</a>
+                <div class="mycarousel-left">
+                    <ul>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon1.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">休闲零食</a></span>
+                                <p class="mycarousel-left-captions"><a href="">松子</a> <a href="">鲜花饼</a> <a href="">腰果</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon2.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">饼干糕点</a></span>
+                                <p class="mycarousel-left-captions"><a href="">华夫饼</a> <a href="">肉松饼</a> <a href="">膨化食品</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon3.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">生鲜果蔬</a></span>
+                                <p class="mycarousel-left-captions"><a href="">三文鱼</a> <a href="">车厘子</a> <a href="">蔬菜</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon4.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">粮油干货</a></span>
+                                <p class="mycarousel-left-captions"><a href="">大米</a> <a href="">食用油</a> <a href="">南北干货</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon5.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">茶水饮料</a></span>
+                                <p class="mycarousel-left-captions"><a href="">碳酸饮料</a> <a href="">果汁</a> <a href="">茶叶</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon6.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">传统滋补</a></span>
+                                <p class="mycarousel-left-captions"><a href="">西洋参</a> <a href="">燕窝</a> <a href="">三七</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mycarousel-left-item">
+                            <img src="../public/img/firstPage/foodicon7.png" alt="">
+                            <div class="mycarousel-item-right">
+                                <span class="mycarousel-left-title"><a href="">中外名酒</a></span>
+                                <p class="mycarousel-left-captions"><a href="">白酒</a> <a href="">黄酒</a> <a href="">葡萄酒</a></p>
+                            </div>
+                            <img src="../public/img/firstPage/arrow-right.png" alt="" class="arrow-right">
+
+
+                            <div class="mycarousel-left-extend">
+                                <div class="div-arrow-bold">
+                                    <img src="../public/img/firstPage/arrow-bold.png" alt="" class="arrow-bold">
+                                </div>
+                                <ul class="mycarousel-left-extend-bigul">
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">梅/果干</span>
+                                            <img src="../public/img/firstPage/carousel_extend4.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">坚果炒货</span>
+                                            <img src="../public/img/firstPage/carousel_extend1.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">肉类即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend2.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mycarousel-extend-item">
+                                        <div class="mycarousel-extend-left">
+                                            <span class="mycarousel-extend-left-title">海味即食</span>
+                                            <img src="../public/img/firstPage/carousel_extend3.jpg" alt="">
+                                        </div>
+                                        <div class="mycarousel-extend-right">
+                                            <ul>
+                                                <li><a href="">夏威夷果</a></li>
+                                                <li><a href="">松子</a></li>
+                                                <li><a href="">开心果</a></li>
+                                                <li><a href="">瓜子</a></li>
+                                                <li><a href="">巴旦木</a></li>
+                                                <li><a href="">腰果</a></li>
+                                                <li><a href="">杏仁</a></li>
+                                                <li><a href="">花生</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <a href="" class="shouye">首页</a>
+            <a href="" class="shangjiaruzhu">商家入驻</a>
+        </div>
+    </div>
+    <div class="selector">
+        <div class="mycontainer">
+            <div class="selector-top">
+                <div class="selectorTop-left">
+                    <a href="">汇吃</a>
+                    <span>&gt;</span>
+                    <div class="selector-search">
+                        <input type="text" value="休闲零食" placeholder="在该条件下查找">
+                        <a href=""><span class="glyphicon glyphicon-search"></span></a>
+                    </div>
+
+                </div>
+                <div class="selectorTop-right">
+                    共<span> 695</span>件宝贝
+                </div>
+            </div>
+            <div class="selector-middle">
+                <span>分类</span>
+                <a href="">零食/坚果/特产</a>
+                <a href="">粮油米面/土特产/调味品</a>
+                <a href="">水果蔬菜/水产肉类/熟食</a>
+                <a href="">参茸滋补</a>
+                <a href="">保健滋补医药器械</a>
+                <a href="">茶/咖啡/冲饮/饮料</a>
+            </div>
+            <div class="selector-bottom">
+                <ul>
+                   <li><a href=""  class="selector-active">综合排序</a></li>
+                   <li><a href="">销量</a></li>
+                   <li><a href="">人气</a></li>
+                   <li><a href="">信用</a></li>
+                   <li><a href="">总价 <span></span> </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+//        //食品分类上下滑
+//        $('.food-classify-tittle').mouseenter(function () {
+//           $('.mycarousel-left').show();
+//        });
+//
+//        $('.food-classify-tittle').mouseleave(function () {
+//            $('.mycarousel-left').hide();
+//        });
+
+        //        幻灯片左部nav
+        $('.mycarousel-left-item').mouseenter(function () {
+            $(this).css({'background':'#ff341d'});
+            $(this).find('.mycarousel-left-extend').css({'z-index':999}).show();
+            $(this).find('.arrow-right').hide();
+
+        });
+
+        $('.mycarousel-left-item').mouseleave(function () {
+            $(this).css({'background':'#ff6440'});
+            $(this).find('.mycarousel-left-extend').hide();
+            $(this).find('.arrow-right').show();
+
+        });
+
+
+
+
+        //顶部nav
+        $('.myTaobao').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.myTaobao_down').show();
+        });
+
+        $('.myTaobao').mouseleave(function () {
+            $(this).css({'background-color':'#f5f5f5'});
+            $(this).find('.myTaobao_down').hide();
+        });
+
+        $('.shop-cart').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.shop-cart-down').show();
+        });
+
+        $('.shop-cart').mouseleave(function () {
+            $(this).css({'background-color': '#f5f5f5'});
+            $(this).find('.shop-cart-down').hide();
+        });
+
+        $('.collection').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.collection-down').show();
+        });
+
+        $('.collection').mouseleave(function () {
+            $(this).css({'background-color': '#f5f5f5'});
+            $(this).find('.collection-down').hide();
+        });
+
+        $('.saler-center').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.saler-center-down').show();
+        });
+
+        $('.saler-center').mouseleave(function () {
+            $(this).css({'background-color': '#f5f5f5'});
+            $(this).find('.saler-center-down').hide();
+        });
+
+        $('.human-service').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.human-service-down').show();
+        });
+
+        $('.human-service').mouseleave(function () {
+            $(this).css({'background-color': '#f5f5f5'});
+            $(this).find('.human-service-down').hide();
+        });
+
+        $('.web-nav').mouseenter(function () {
+            $(this).css({'background-color': '#fff'});
+            $(this).find('.web-nav-down').css({'z-index':999}).show();
+        });
+
+        $('.web-nav').mouseleave(function () {
+            $(this).css({'background-color': '#f5f5f5'});
+            $(this).find('.web-nav-down').hide();
+        });
+
+    </script>
+
+</body>
+</html>
